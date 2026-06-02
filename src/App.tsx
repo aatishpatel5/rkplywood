@@ -8,7 +8,7 @@ export default function App() {
   return (
     <main className="bg-beige min-h-screen text-white font-sans flex flex-col relative overflow-hidden">
       {/* Navigation Overlay */}
-      <header className="fixed top-0 left-0 w-full px-6 md:px-12 py-6 z-50 flex justify-between items-center border-b border-charcoal/10 bg-charcoal backdrop-blur-md">
+      <header className="fixed top-0 left-0 w-full px-6 md:px-12 py-6 z-50 flex justify-between items-center border-b border-charcoal/10 bg-transparent backdrop-blur-md text-charcoal">
         <div className="flex items-center">
            <img className="w-16" src="/logo.png" alt="" />
         <div className="text-xl md:text-2xl font-bold tracking-tighter">
