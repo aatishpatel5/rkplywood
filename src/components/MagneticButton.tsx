@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 interface MagneticButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   className?: string;
+  onClick?: (e?: any) => void;
 }
 
 export default function MagneticButton({ children, className = '', ...props }: MagneticButtonProps) {

@@ -51,10 +51,10 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
           >
             {/* Mobile Layout (Static replica of Main Hero for 3s) */}
             <div className="flex md:hidden flex-col w-full h-full">
-              <div className="w-full h-[45dvh] relative overflow-hidden border-b border-charcoal/10">
+              <div className="w-full h-[55dvh] relative overflow-hidden border-b border-charcoal/10">
                 <img
                   src="/heroSection.webp"
-                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  className="absolute inset-0 w-full h-full object-contain object-center"
                   alt="Intro Mobile"
                 />
               </div>
@@ -126,7 +126,7 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
           className="absolute inset-0 z-30 flex flex-col md:flex-row pt-16 border-b border-charcoal/10 bg-beige overflow-hidden"
         >
           {/* Left Side: Auto Scroll Image Slider */}
-          <div className="w-full md:w-1/2 h-[45dvh] md:h-full relative overflow-hidden bg-charcoal/10 border-b md:border-b-0 md:border-r border-charcoal/10">
+          <div className="w-full md:w-1/2 h-[55dvh] md:h-full relative overflow-hidden bg-transparent border-b md:border-b-0 md:border-r border-charcoal/10">
             <AnimatePresence initial={false}>
               <motion.div
                 key={currentIndex}
@@ -134,7 +134,7 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                 animate={{ x: 0 }}
                 exit={{ x: "-100%" }}
                 transition={{ duration: 1, ease: [0.4, 0.0, 0.2, 1] }}
-                className="absolute inset-0 w-full h-full bg-cover bg-center"
+                className="absolute inset-0 w-full h-full bg-contain md:bg-cover bg-no-repeat bg-center"
                 style={{ backgroundImage: `url(${images[currentIndex]})` }}
               >
                 <div className="absolute inset-0 bg-charcoal/10 mix-blend-multiply" />
