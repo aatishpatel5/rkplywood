@@ -53,7 +53,7 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
             <div className="flex lg:hidden w-full h-full relative items-end pb-28 pt-16">
               <img
                 src="/heroSection.webp"
-                className="absolute inset-0 w-full h-full object-cover object-center"
+                className="absolute inset-0 w-full h-full object-contain object-center"
                 alt="Intro Mobile"
               />
               {/* Premium Gradient Overlay */}
