@@ -89,7 +89,7 @@ export default function PeelReveal() {
           >
             <div 
               className="absolute inset-0 bg-cover bg-center opacity-80"
-              style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?auto=format&fit=crop&w=800&q=80)' }}
+              style={{ backgroundImage: 'url(/doorply.webp)' }}
             />
             <span className="relative z-10 text-[10px] text-white uppercase tracking-widest mix-blend-difference drop-shadow-xl">Premium Veneer</span>
           </motion.div>

@@ -5,25 +5,25 @@ const categories = [
   {
     title: 'Premium Plywood',
     description: 'BWP & BWR grade structurally calibrated core for ultimate durability.',
-    image: 'https://images.unsplash.com/photo-1620645607598-a6caab94a4ae?auto=format&fit=crop&w=800&q=80',
+    image: '/doorply.webp',
     number: '01'
   },
   {
     title: 'Natural Veneers',
     description: 'Exotic wood grains sourced globally for architectural excellence.',
-    image: 'https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?auto=format&fit=crop&w=800&q=80',
+    image: '/doors.webp',
     number: '02'
   },
   {
     title: 'Decorative Laminates',
     description: 'Anti-scratch, HD textures in matte, gloss, and suede finishes.',
-    image: 'https://images.unsplash.com/photo-1598928302484-48f8cbe22aef?auto=format&fit=crop&w=800&q=80',
+    image: '/hendles.webp',
     number: '03'
   },
   {
     title: 'Flush Doors',
     description: 'High-density, sound-insulating core doors engineered for strength.',
-    image: 'https://images.unsplash.com/photo-1618220179428-22790b46a014?auto=format&fit=crop&w=800&q=80',
+    image: '/leminate.webp',
     number: '04'
   }
 ];

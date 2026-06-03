@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const products = [
-  { id: 1, name: 'Royal American Walnut', spec: 'BWP Marine Grade', tag: 'Termite Proof', img: 'https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?auto=format&fit=crop&w=800&q=80', color: '#3D2B1F' },
-  { id: 2, name: 'Charcoal Matte Laminate', spec: 'Anti-Fingerprint', tag: 'Architectural', img: 'https://images.unsplash.com/photo-1598928302484-48f8cbe22aef?auto=format&fit=crop&w=800&q=80', color: '#1C1C1C' },
-  { id: 3, name: 'BWP Marine Door', spec: 'Boiling Water Proof', tag: 'Core', img: 'https://images.unsplash.com/photo-1618220179428-22790b46a014?auto=format&fit=crop&w=800&q=80', color: '#8D6E63' },
-  { id: 4, name: 'Smoked Walnut Veneer', spec: 'FSC Certified', tag: 'Sustainable', img: 'https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?auto=format&fit=crop&w=800&q=80', color: '#5D4037' },
-  { id: 5, name: 'Acoustic Panel', spec: 'Sound Absorption 0.8 NRC', tag: 'Specialty', img: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80', color: '#2D1B0F' },
+  { id: 1, name: 'Royal American Walnut', spec: 'BWP Marine Grade', tag: 'Termite Proof', img: '/doorply.webp', color: '#3D2B1F' },
+  { id: 2, name: 'Charcoal Matte Laminate', spec: 'Anti-Fingerprint', tag: 'Architectural', img: '/leminate.webp', color: '#1C1C1C' },
+  { id: 3, name: 'BWP Marine Door', spec: 'Boiling Water Proof', tag: 'Core', img: '/doorply.webp', color: '#8D6E63' },
+  { id: 4, name: 'Smoked Walnut Veneer', spec: 'FSC Certified', tag: 'Sustainable', img: '/leminate.webp', color: '#5D4037' },
+  { id: 5, name: 'Acoustic Panel', spec: 'Sound Absorption 0.8 NRC', tag: 'Specialty', img: '/doorply.webp', color: '#2D1B0F' },
 ];
 
 export default function SlidingRack() {
