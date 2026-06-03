@@ -149,7 +149,7 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
           {/* Content (Overlaid on Mobile, Right Side on Desktop) */}
           <div className="relative z-20 w-full lg:w-1/2 h-full flex flex-col justify-end lg:justify-center p-6 pb-24 lg:p-10 lg:px-16 lg:py-8 lg:bg-beige pointer-events-none lg:pointer-events-auto">
             <div className="max-w-2xl space-y-6 lg:space-y-8 pointer-events-auto">
-              {/* <div className="space-y-3 lg:space-y-4">
+              <div className="hidden lg:block space-y-3 lg:space-y-4">
                 <div className="overflow-hidden">
                   <motion.h1
                     variants={textVariants}
@@ -174,9 +174,9 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                     Surfaces.
                   </motion.h1>
                 </div>
-              </div> */}
+              </div>
 
-              {/* <div className="overflow-hidden">
+              <div className="hidden lg:block overflow-hidden">
                 <motion.p
                   variants={textVariants}
                   initial="hidden"
@@ -186,7 +186,7 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                   Curating high-end architectural veneers and calibrated plywood
                   for the modern visionary.
                 </motion.p>
-              </div> */}
+              </div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
