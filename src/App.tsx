@@ -3,11 +3,13 @@ import Collections from './components/Collections';
 import About from './components/About';
 import SlidingRack from './components/SlidingRack';
 import PeelReveal from './components/PeelReveal';
-import { Phone, Instagram, MapPin, ExternalLink } from 'lucide-react';
+import { Phone, Instagram, MapPin, ExternalLink, Menu, X } from 'lucide-react';
 import { useState } from 'react';
+import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'collections' | 'about'>('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <main className="bg-beige min-h-screen text-white font-sans flex flex-col relative overflow-hidden">
       {/* Navigation Overlay */}
@@ -18,20 +20,63 @@ export default function App() {
           RK <span className="font-light text-[#F5E6D3]">Plywood</span>
         </div>
         </div>
-        <div className="flex items-center gap-6 md:gap-8">
+        <div className="flex items-center gap-4 md:gap-8">
           <nav className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-medium text-[#F5E6D3]/80">
-          <a href="#collections" onClick={(e) => { e.preventDefault(); setCurrentPage('collections'); window.scrollTo(0, 0); }} className="hover:text-gold transition-colors">Collections</a>
+            <a href="#collections" onClick={(e) => { e.preventDefault(); setCurrentPage('collections'); window.scrollTo(0, 0); }} className="hover:text-gold transition-colors">Collections</a>
             <a href="#about" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); window.scrollTo(0, 0); }} className="hover:text-gold transition-colors">About Us</a>
-            
           </nav>
           <a href="https://maps.app.goo.gl/1KC2Am8iZtoaJLFU6" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 border border-[#F5E6D3]/30 text-[#F5E6D3] hover:bg-[#F5E6D3]/10 transition-colors rounded-2xl">
             <MapPin size={14} /> <span className="hidden md:inline text-[9px] uppercase tracking-widest font-semibold">Locate</span>
           </a>
-          <a href="tel:+919928712712" className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 bg-white text-black font-semibold text-[9px] uppercase tracking-widest hover:bg-gray-300 transition-colors border-2 border-white rounded-2xl">
+          <a href="tel:+919928712712" className="hidden md:flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 bg-white text-black font-semibold text-[9px] uppercase tracking-widest hover:bg-gray-300 transition-colors border-2 border-white rounded-2xl">
             <Phone size={14} /> <span className="hidden md:inline">Call Now</span>
           </a>
+
+          {/* Hamburger Icon */}
+          <button 
+            className="md:hidden flex items-center justify-center p-1 text-[#F5E6D3] hover:text-gold transition-colors z-50"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-40 bg-[#1A1412] pt-24 px-6 flex flex-col gap-8 md:hidden"
+          >
+            <nav className="flex flex-col gap-6 text-xl tracking-[0.1em] font-medium text-[#F5E6D3]">
+              <a 
+                href="#collections" 
+                onClick={(e) => { e.preventDefault(); setCurrentPage('collections'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }} 
+                className="hover:text-gold transition-colors border-b border-white/10 pb-4"
+              >
+                Collections
+              </a>
+              <a 
+                href="#about" 
+                onClick={(e) => { e.preventDefault(); setCurrentPage('about'); setIsMobileMenuOpen(false); window.scrollTo(0, 0); }} 
+                className="hover:text-gold transition-colors border-b border-white/10 pb-4"
+              >
+                About Us
+              </a>
+              <a 
+                href="tel:+919928712712" 
+                className="flex items-center justify-center gap-3 bg-white text-black font-bold uppercase tracking-widest text-[14px] py-4 rounded-xl mt-4 hover:bg-gray-200 transition-colors"
+              >
+                <Phone size={20} /> 
+                <span>Call Now</span>
+              </a>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       {currentPage === 'home' ? (
         <>

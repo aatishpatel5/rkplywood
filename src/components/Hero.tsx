@@ -49,74 +49,74 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-0 z-40 overflow-hidden bg-beige md:bg-charcoal flex flex-col md:block pt-16 md:pt-0"
           >
-          {/* Mobile Layout (Static replica of Main Hero for 3s) */}
-          <div className="flex md:hidden flex-col w-full h-full">
-            <div className="w-full h-[45dvh] relative overflow-hidden border-b border-charcoal/10">
-              <img
-                src="/heroSection.webp"
-                className="absolute inset-0 w-full h-full object-cover"
-                alt="Intro Mobile"
-              />
-            </div>
-            <div className="flex-1 flex items-center justify-center p-6 bg-beige relative z-10">
-              <div className="max-w-2xl space-y-6 w-full">
-                <div className="space-y-4">
-                  <h1 className="text-4xl font-display leading-[1.1] tracking-tight text-charcoal">
-                    Elevating
-                    <br />
-                    Spaces
-                  </h1>
-                  <h1 className="text-4xl font-display leading-[1.1] tracking-tight text-charcoal">
-                    with <span className="italic text-walnut">Premium</span>
-                    <br />
-                    Surfaces.
-                  </h1>
-                </div>
-                <p className="text-sm text-charcoal/60 leading-relaxed max-w-[280px]">
-                  Curating high-end architectural veneers and calibrated plywood
-                  for the modern visionary.
-                </p>
-                {/* <div className="pt-4">
+            {/* Mobile Layout (Static replica of Main Hero for 3s) */}
+            <div className="flex md:hidden flex-col w-full h-full">
+              <div className="w-full h-[45dvh] relative overflow-hidden border-b border-charcoal/10">
+                <img
+                  src="/heroSection.webp"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  alt="Intro Mobile"
+                />
+              </div>
+              <div className="flex-1 flex items-center justify-center p-6 bg-beige relative z-10">
+                <div className="max-w-2xl space-y-6 w-full">
+                  <div className="space-y-4">
+                    <h1 className="text-4xl font-display leading-[1.1] tracking-tight text-charcoal">
+                      Elevating
+                      <br />
+                      Spaces
+                    </h1>
+                    <h1 className="text-4xl font-display leading-[1.1] tracking-tight text-charcoal">
+                      with <span className="italic text-walnut">Premium</span>
+                      <br />
+                      Surfaces.
+                    </h1>
+                  </div>
+                  <p className="text-sm text-charcoal/60 leading-relaxed max-w-[280px]">
+                    Curating high-end architectural veneers and calibrated
+                    plywood for the modern visionary.
+                  </p>
+                  {/* <div className="pt-4">
                   <MagneticButton>
                     Explore Collection
                   </MagneticButton>
                 </div> */}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Desktop Image & Layout */}
-          <motion.img
-            initial={{ scale: 1.05 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 4, ease: "easeOut" }}
-            src="/herosection_large.webp"
-            className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-90"
-            alt="Intro Desktop"
-          />
-          <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-black/30" />
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }}
-            className="hidden md:flex relative z-10 h-full flex-col items-center justify-center text-center px-6"
-          >
-            <h1 className="text-7xl lg:text-[100px] xl:text-[120px] text-white font-display tracking-[0.1em] uppercase font-light drop-shadow-2xl">
-              RK Plywood
-            </h1>
-            <p className="text-white/90 mt-6 tracking-[0.3em] text-sm uppercase font-medium">
-              Curators of Extraordinary Surfaces
-            </p>
+            {/* Desktop Image & Layout */}
+            <motion.img
+              initial={{ scale: 1.05 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 4, ease: "easeOut" }}
+              src="/herosection_large.webp"
+              className="hidden md:block absolute inset-0 w-full h-full object-cover opacity-90"
+              alt="Intro Desktop"
+            />
+            <div className="hidden md:block absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-black/30" />
 
             <motion.div
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: 1, duration: 2, ease: "easeInOut" }}
-              className="w-24 h-[1px] bg-gold mt-12 origin-left"
-            />
-          </motion.div>
-        </motion.section>
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 1.5, ease: "easeOut" }}
+              className="hidden md:flex relative z-10 h-full flex-col items-center justify-center text-center px-6"
+            >
+              <h1 className="text-7xl lg:text-[100px] xl:text-[120px] text-white font-display tracking-[0.1em] uppercase font-light drop-shadow-2xl">
+                RK Plywood
+              </h1>
+              <p className="text-white/90 mt-6 tracking-[0.3em] text-sm uppercase font-medium">
+                Curators of Extraordinary Surfaces
+              </p>
+
+              <motion.div
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 1, duration: 2, ease: "easeInOut" }}
+                className="w-24 h-[1px] bg-gold mt-12 origin-left"
+              />
+            </motion.div>
+          </motion.section>
         ) : null}
       </AnimatePresence>
 
@@ -199,7 +199,9 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                 transition={{ delay: 0.8, duration: 0.8 }}
                 className="pt-4"
               >
-                <MagneticButton onClick={onExplore}>Explore Collection</MagneticButton>
+                <MagneticButton onClick={onExplore}>
+                  Explore Collection
+                </MagneticButton>
               </motion.div>
             </div>
           </div>
