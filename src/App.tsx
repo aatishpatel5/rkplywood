@@ -100,11 +100,9 @@ export default function App() {
              <span>Locate Store</span>
              <ExternalLink size={10} className="-ml-1 opacity-70" />
           </a>
-          <a href="#" className="hover:text-gold cursor-pointer transition-colors flex items-center gap-2">
+          <a href="https://www.instagram.com/rkplywood_banswara?igsh=MWFsajNhejB3Z2FlcA==" className="hover:text-gold cursor-pointer transition-colors flex items-center gap-2">
              <Instagram size={14} /> <span className="hidden md:inline">Instagram</span>
           </a>
-          <span className="hover:text-gold cursor-pointer transition-colors">Behance</span>
-          <span className="hover:text-gold cursor-pointer transition-colors">LinkedIn</span>
         </div>
         <div className="text-gold font-bold mt-4 md:mt-0">Exclusive Architectural Partner</div>
       </footer>
