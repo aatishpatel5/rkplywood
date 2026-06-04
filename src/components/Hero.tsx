@@ -75,9 +75,8 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
         </div>
 
         {/* Content (Overlaid on Mobile, Right Side on Desktop) */}
-        <div className="relative z-20 w-full lg:w-1/2 h-full flex flex-col justify-end lg:justify-center p-6 pb-24 lg:p-10 lg:px-16 lg:py-8 lg:bg-beige pointer-events-none lg:pointer-events-auto">
-          <div className="max-w-2xl w-full flex flex-col gap-6 lg:gap-8 pointer-events-auto">
-            
+        <div className="relative z-20 w-full lg:w-1/2 h-full flex flex-col justify-end lg:justify-center p-5 sm:p-8 pb-20 sm:pb-24 lg:p-10 lg:px-16 lg:py-8 lg:bg-beige pointer-events-none lg:pointer-events-auto">
+          <div className="max-w-2xl w-full flex flex-col gap-5 sm:gap-6 lg:gap-8 pointer-events-auto">
             {/* Dynamic Typography based on Slide */}
             <AnimatePresence mode="wait">
               {currentIndex === 0 ? (
@@ -90,16 +89,21 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                   className="flex flex-col gap-4"
                 >
                   <div className="flex flex-col">
-                    <span className="text-gold lg:text-walnut text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase mb-3 drop-shadow-md">
+                    <span className="text-gold lg:text-walnut text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-2 sm:mb-3 drop-shadow-md">
                       Welcome to RK Plywood
                     </span>
-                    <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight text-white lg:text-charcoal drop-shadow-xl lg:drop-shadow-none uppercase">
-                      Experience<br />
-                      <span className="italic text-gold lg:text-walnut text-4xl sm:text-5xl lg:text-6xl lowercase font-light">the</span> Masterpiece.
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight text-white lg:text-charcoal drop-shadow-xl lg:drop-shadow-none uppercase">
+                      Experience
+                      <br />
+                      <span className="italic text-gold lg:text-walnut text-3xl sm:text-4xl md:text-5xl lg:text-6xl lowercase font-light">
+                        the
+                      </span>{" "}
+                      Masterpiece.
                     </h1>
                   </div>
-                  <p className="text-sm sm:text-base text-white/70 lg:text-charcoal/70 tracking-wide leading-relaxed max-w-[340px] drop-shadow-md lg:drop-shadow-none border-l-[3px] border-gold pl-4 mt-2">
-                    Step inside our curated showroom. Where exceptional craftsmanship meets architectural elegance.
+                  <p className="text-xs sm:text-sm md:text-base text-white/80 lg:text-charcoal/70 tracking-wide leading-relaxed max-w-[280px] sm:max-w-[340px] drop-shadow-md lg:drop-shadow-none border-l-[2px] sm:border-l-[3px] border-gold pl-3 sm:pl-4 mt-2 sm:mt-4">
+                    Step inside our curated showroom. Where exceptional
+                    craftsmanship meets architectural elegance.
                   </p>
                 </motion.div>
               ) : (
@@ -111,13 +115,18 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="hidden lg:flex flex-col gap-3 sm:gap-4"
                 >
-                  <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight text-white lg:text-charcoal drop-shadow-xl lg:drop-shadow-none">
-                    Elevating<br />
-                    Spaces<br />
-                    <span className="italic text-gold lg:text-walnut text-4xl sm:text-5xl lg:text-6xl">with Premium Surfaces.</span>
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight text-white lg:text-charcoal drop-shadow-xl lg:drop-shadow-none">
+                    Elevating
+                    <br />
+                    Spaces
+                    <br />
+                    <span className="italic text-gold lg:text-walnut text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                      with Premium Surfaces.
+                    </span>
                   </h1>
-                  <p className="text-sm sm:text-base text-white/80 lg:text-charcoal/70 tracking-wide leading-relaxed max-w-[340px] drop-shadow-md lg:drop-shadow-none border-l-[3px] border-gold pl-4 mt-2">
-                    Curating high-end architectural veneers and calibrated plywood for the modern visionary.
+                  <p className="text-xs sm:text-sm md:text-base text-white/80 lg:text-charcoal/70 tracking-wide leading-relaxed max-w-[280px] sm:max-w-[340px] drop-shadow-md lg:drop-shadow-none border-l-[2px] sm:border-l-[3px] border-gold pl-3 sm:pl-4 mt-2 sm:mt-4">
+                    Curating high-end architectural veneers and calibrated
+                    plywood for the modern visionary.
                   </p>
                 </motion.div>
               )}
@@ -129,17 +138,29 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="pt-4 lg:pt-2"
             >
-              <MagneticButton 
-                onClick={onExplore} 
-                className="group flex items-center justify-center gap-3 w-max lg:w-auto px-8 lg:px-7 !py-3.5 lg:!py-3 !bg-white lg:!bg-charcoal !text-[#1a1a1a] lg:!text-white !border-none !rounded-full uppercase tracking-[0.15em] lg:tracking-normal lg:normal-case text-xs lg:text-base font-bold lg:font-medium shadow-[0_15px_35px_rgba(0,0,0,0.4)] lg:shadow-none hover:scale-[1.02] lg:hover:!bg-charcoal/90 active:scale-95 transition-all duration-300"
+              <MagneticButton
+                onClick={onExplore}
+                className="group flex items-center gap-2 w-max !bg-transparent !p-0 !border-none !shadow-none text-white lg:text-charcoal uppercase tracking-[0.15em] text-[11px] sm:text-xs md:text-sm font-semibold hover:!text-gold lg:hover:!text-gold transition-colors duration-300"
               >
-                <span>Explore Collection</span>
-                <svg className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                <span className="relative pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-gold group-hover:after:w-full after:transition-all after:duration-300">
+                  Explore Collection
+                </span>
+                <svg
+                  className="w-4 h-4 sm:w-5 sm:h-5 transform group-hover:translate-x-2 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </MagneticButton>
             </motion.div>
-
           </div>
         </div>
       </section>
