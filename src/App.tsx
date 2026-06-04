@@ -4,16 +4,26 @@ import About from './components/About';
 import SlidingRack from './components/SlidingRack';
 import PeelReveal from './components/PeelReveal';
 import { Phone, Instagram, MapPin, ExternalLink, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "motion/react";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<'home' | 'collections' | 'about'>('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main className="bg-beige min-h-screen text-white font-sans flex flex-col relative overflow-hidden">
       {/* Navigation Overlay */}
-      <header className="fixed top-0 left-0 w-full h-16 px-6 md:px-12 py-6 z-50 flex justify-between items-center border-b border-white/5 bg-[#1A1412]/85 backdrop-blur-xl text-[#F5E6D3]">
+      <header className={`fixed top-0 left-0 w-full h-16 px-6 md:px-12 py-6 z-50 flex justify-between items-center transition-all duration-300 ${isScrolled ? 'bg-[#1a1a1a]/80 backdrop-blur-md border-b border-white/10 shadow-lg' : 'bg-transparent border-b border-transparent'} text-[#F5E6D3]`}>
         <div className="flex items-center cursor-pointer" onClick={() => { setCurrentPage('home'); window.scrollTo(0, 0); }}>
            <img className="w-12" src="/logo.webp" alt="RK Plywood Logo" />
         <div className="text-xl md:text-2xl font-bold tracking-tighter ml-2">

@@ -89,10 +89,10 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                   className="flex flex-col gap-4"
                 >
                   <div className="flex flex-col">
-                    <span className="hidden sm:block text-gold lg:text-walnut text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-2 sm:mb-3 drop-shadow-md">
+                    <span className="hidden sm:block text-gold lg:text-walnut text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-2 sm:mb-3 drop-shadow-sm">
                       Welcome to RK Plywood
                     </span>
-                    <h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight text-white lg:text-charcoal drop-shadow-xl lg:drop-shadow-none uppercase">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight text-white lg:text-charcoal drop-shadow-md lg:drop-shadow-none uppercase">
                       <span className="hidden sm:inline">
                         Crafting
                         <br />
@@ -103,10 +103,13 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                       Plywood<span className="hidden sm:inline">.</span>
                     </h1>
                   </div>
-                  <p className="text-sm md:text-base text-white/80 lg:text-charcoal/70 tracking-wide leading-relaxed max-w-[280px] sm:max-w-[340px] drop-shadow-md lg:drop-shadow-none border-l-[2px] sm:border-l-[3px] border-gold pl-3 sm:pl-4 mt-2 sm:mt-4">
-                    <span className="sm:hidden">Strong, durable & elegant.</span>
+                  <p className="text-sm md:text-base text-white/80 lg:text-charcoal/70 tracking-wide leading-relaxed max-w-[280px] sm:max-w-[340px] drop-shadow-sm lg:drop-shadow-none border-l-[2px] sm:border-l-[3px] border-gold pl-3 sm:pl-4 mt-2 sm:mt-4">
+                    <span className="sm:hidden">
+                      Strong, durable & elegant.
+                    </span>
                     <span className="hidden sm:inline">
-                      Discover top-grade plywood, blockboards, and veneers built for lasting strength and unmatched elegance.
+                      Discover top-grade plywood, blockboards, and veneers built
+                      for lasting strength and unmatched elegance.
                     </span>
                   </p>
                 </motion.div>
@@ -119,7 +122,7 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="flex flex-col gap-3 sm:gap-4"
                 >
-                  <h1 className="text-6xl sm:text-5xl md:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight text-white lg:text-charcoal drop-shadow-xl lg:drop-shadow-none uppercase sm:normal-case">
+                  <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display leading-[1.05] tracking-tight text-white lg:text-charcoal drop-shadow-xl lg:drop-shadow-none uppercase sm:normal-case">
                     <span className="hidden sm:inline">
                       Complete
                       <br />
@@ -133,9 +136,13 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                     </span>
                   </h1>
                   <p className="text-sm md:text-base text-white/80 lg:text-charcoal/70 tracking-wide leading-relaxed max-w-[280px] sm:max-w-[340px] drop-shadow-md lg:drop-shadow-none border-l-[2px] sm:border-l-[3px] border-gold pl-3 sm:pl-4 mt-2 sm:mt-4">
-                    <span className="sm:hidden">Doors, laminates & designer handles.</span>
+                    <span className="sm:hidden">
+                      Doors, laminates & designer handles.
+                    </span>
                     <span className="hidden sm:inline">
-                      From premium flush doors and stunning laminates to architectural handles, find everything you need under one roof.
+                      From premium flush doors and stunning laminates to
+                      architectural handles, find everything you need under one
+                      roof.
                     </span>
                   </p>
                 </motion.div>
