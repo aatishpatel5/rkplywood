@@ -85,6 +85,7 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -15 }}
+                  
                   transition={{ duration: 0.6, ease: "easeOut" }}
                   className="flex flex-col gap-4"
                 >
