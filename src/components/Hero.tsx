@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import MagneticButton from "./MagneticButton";
 
 const images = [
-  "/Gemini_Generated_Image_2npidh2npidh2npi.webp",
+  "/heroImg_Small.webp",
   "/doors.webp",
   "/leminate.webp",
   "/doorply.webp",
@@ -27,7 +27,7 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
         className="absolute inset-0 z-30 flex lg:flex-row bg-[#1a1a1a] lg:bg-beige overflow-hidden"
       >
         {/* Background Image Slider (Top 75% on Mobile, Left Half on Desktop) */}
-        <div className="absolute top-20 w-full h-[55%] lg:relative lg:w-1/2 lg:h-full overflow-hidden bg-[#1a1a1a] border-b-0 lg:border-r border-charcoal/20 z-10 lg:z-auto">
+        <div className="absolute top-16 w-full h-[55%] lg:relative lg:w-1/2 lg:h-full overflow-hidden bg-[#1a1a1a] border-b-0 lg:border-r border-charcoal/20 z-10 lg:z-auto">
           <AnimatePresence initial={false}>
             {currentIndex === 0 ? (
               <motion.div
@@ -153,12 +153,30 @@ export default function Hero({ onExplore }: { onExplore?: () => void }) {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="pt-4 lg:pt-2 flex w-full"
             >
-              <MagneticButton
+              <button
                 onClick={onExplore}
-                className="w-max !bg-white !text-charcoal !py-3 !px-6 sm:!py-3.5 sm:!px-8 !rounded-full shadow-md hover:shadow-xl hover:!text-gold"
+                className="group relative overflow-hidden flex items-center justify-center gap-2 w-max py-3 px-5 sm:px-6 bg-white text-[#1a1a1a] rounded-sm shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1"
               >
-                Explore Collection
-              </MagneticButton>
+                <span className="relative z-10 uppercase tracking-[0.15em] text-[10px] sm:text-xs font-bold group-hover:text-[#d4af37] transition-colors duration-300">
+                  Explore Collection
+                </span>
+                <svg
+                  className="relative z-10 w-3.5 h-3.5 text-[#1a1a1a] group-hover:text-[#d4af37] transform group-hover:translate-x-1 transition-all duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={1.5}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
+                </svg>
+                {/* Premium Gold Underline Animation */}
+                <div className="absolute bottom-0 left-0 w-full h-[3px] bg-[#d4af37] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              </button>
             </motion.div>
           </div>
         </div>
