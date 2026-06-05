@@ -23,28 +23,31 @@ export default function App() {
   return (
     <main className="bg-beige min-h-screen text-white font-sans flex flex-col relative overflow-hidden">
       {/* Navigation Overlay */}
-      <header className={`fixed top-0 left-0 w-full h-16 px-6 md:px-12 py-6 z-50 flex justify-between items-center transition-all duration-300 ${isScrolled ? 'bg-[#1a1a1a]/80 backdrop-blur-md border-b border-white/10 shadow-lg' : 'bg-transparent border-b border-transparent'} text-[#F5E6D3]`}>
-        <div className="flex items-center cursor-pointer" onClick={() => { setCurrentPage('home'); window.scrollTo(0, 0); }}>
-           <img className="w-12" src="/logo.webp" alt="RK Plywood Logo" />
-        <div className="text-xl md:text-2xl font-bold tracking-tighter ml-2">
-          RK <span className="font-light text-[#F5E6D3]">Plywood</span>
+      <header className={`fixed top-0 left-0 w-full h-16 px-6 md:px-12 py-6 z-50 flex justify-between items-center transition-all duration-300 ${isScrolled ? 'bg-[#1a1a1a]/80 backdrop-blur-md border-b border-white/10 shadow-lg' : 'bg-transparent lg:bg-[#1a1a1a]/20 lg:backdrop-blur-sm border-b border-transparent'}`}>
+        <div 
+          className={`flex items-center cursor-pointer transition-all duration-300 ${(!isScrolled && currentPage !== 'home') ? 'text-charcoal' : (isScrolled ? 'text-[#F5E6D3]' : 'text-white')}`} 
+          onClick={() => { setCurrentPage('home'); window.scrollTo(0, 0); }}
+        >
+           <img className={`w-12 transition-all duration-300 ${(!isScrolled && currentPage !== 'home') ? 'brightness-0' : ''}`} src="/logo.webp" alt="RK Plywood Logo" />
+        <div className={`text-xl md:text-2xl font-bold tracking-tighter ml-2 transition-colors duration-300 ${isScrolled ? 'text-white' : 'lg:text-black'}`}>
+          RK <span className={`font-medium transition-colors duration-300 ${(!isScrolled && currentPage === 'home') ? 'text-black' : ''}`}>Plywood</span>
         </div>
         </div>
         <div className="flex items-center gap-4 md:gap-8">
-          <nav className="hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-medium text-[#F5E6D3]/80">
-            <a href="#collections" onClick={(e) => { e.preventDefault(); setCurrentPage('collections'); window.scrollTo(0, 0); }} className="hover:text-gold transition-colors">Collections</a>
-            <a href="#about" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); window.scrollTo(0, 0); }} className="hover:text-gold transition-colors">About Us</a>
+          <nav className={`hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-medium transition-colors ${isScrolled ? 'text-[#F5E6D3]/80' : (currentPage === 'home' ? 'text-[#F5E6D3]/80 lg:text-charcoal/80' : 'text-charcoal/80')}`}>
+            <a href="#collections" onClick={(e) => { e.preventDefault(); setCurrentPage('collections'); window.scrollTo(0, 0); }} className={`hover:text-gold transition-colors ${isScrolled ? '' : (currentPage === 'home' ? 'lg:hover:text-gold' : '')}`}>Collections</a>
+            <a href="#about" onClick={(e) => { e.preventDefault(); setCurrentPage('about'); window.scrollTo(0, 0); }} className={`hover:text-gold transition-colors ${isScrolled ? '' : (currentPage === 'home' ? 'lg:hover:text-gold' : '')}`}>About Us</a>
           </nav>
-          <a href="https://maps.app.goo.gl/1KC2Am8iZtoaJLFU6" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 border border-[#F5E6D3]/30 text-[#F5E6D3] hover:bg-[#F5E6D3]/10 transition-colors rounded-2xl">
+          <a href="https://maps.app.goo.gl/1KC2Am8iZtoaJLFU6" target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 border transition-colors rounded-2xl ${isScrolled ? 'border-[#F5E6D3]/30 text-[#F5E6D3] hover:bg-[#F5E6D3]/10' : (currentPage === 'home' ? 'border-[#F5E6D3]/30 text-[#F5E6D3] hover:bg-[#F5E6D3]/10 lg:border-charcoal/30 lg:text-charcoal lg:hover:bg-charcoal/10' : 'border-charcoal/30 text-charcoal hover:bg-charcoal/10')}`}>
             <MapPin size={14} /> <span className="hidden md:inline text-[9px] uppercase tracking-widest font-semibold">Locate</span>
           </a>
-          <a href="tel:+919928712712" className="hidden md:flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 bg-white text-black font-semibold text-[9px] uppercase tracking-widest hover:bg-gray-300 transition-colors border-2 border-white rounded-2xl">
+          <a href="tel:+919928712712" className={`hidden md:flex items-center gap-2 px-3 py-2 md:px-4 md:py-2 font-semibold text-[9px] uppercase tracking-widest transition-colors border-2 rounded-2xl ${isScrolled ? 'bg-white text-black hover:bg-gray-300 border-white' : (currentPage === 'home' ? 'bg-white text-black hover:bg-gray-300 border-white lg:bg-charcoal lg:text-white lg:hover:bg-charcoal/90 lg:border-charcoal' : 'bg-charcoal text-white hover:bg-charcoal/90 border-charcoal')}`}>
             <Phone size={14} /> <span className="hidden md:inline">Call Now</span>
           </a>
 
           {/* Hamburger Icon */}
           <button 
-            className="md:hidden flex items-center justify-center p-1 text-[#F5E6D3] hover:text-gold transition-colors z-50"
+            className={`md:hidden flex items-center justify-center p-1 hover:text-gold transition-colors z-50 ${isScrolled ? 'text-[#F5E6D3]' : (currentPage === 'home' ? 'text-[#F5E6D3]' : 'text-charcoal')}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
