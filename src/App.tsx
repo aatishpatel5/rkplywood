@@ -31,7 +31,7 @@ export default function App() {
            <img className={`w-12 transition-all duration-300 ${(!isScrolled && currentPage !== 'home') ? 'brightness-0' : ''}`} src="/logo.webp" alt="RK Plywood Logo" />
         <div className={`text-xl md:text-2xl font-bold tracking-tighter ml-2 transition-colors duration-300 ${isScrolled ? 'text-white' : 'lg:text-black'}`}>
           RK <span className={`font-medium transition-colors duration-300 ${(!isScrolled && currentPage === 'home') ? 'text-black' : ''}`}>Plywood</span>
-        </div>
+        </div> 
         </div>
         <div className="flex items-center gap-4 md:gap-8">
           <nav className={`hidden md:flex gap-8 text-[11px] uppercase tracking-[0.2em] font-medium transition-colors ${isScrolled ? 'text-[#F5E6D3]/80' : (currentPage === 'home' ? 'text-[#F5E6D3]/80 lg:text-charcoal/80' : 'text-charcoal/80')}`}>
